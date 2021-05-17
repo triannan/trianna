@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/easyScrollDots.css" />
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,16 +13,22 @@
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="script.js" aync defer></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
     <script type="text/javascript" src="https://unpkg.com/splitting/dist/splitting.js"></script>
     <script type="text/javascript" src="https://unpkg.com/scroll-out/dist/scroll-out.js"></script>
-    <div id="top"><header>
+    <script type="text/javascript" src="dist/easyScrollDots.js"></script>
+    <script src="script.js" aync defer></script>
+    <div id="top">
+        <div>
+            <div class="scroll-indicator" id="section01" data-scroll-indicator-title="main"></div>
+        </div>
+        <header>
         trianna nguyen.
         </header>
         <p>student at university of michigan college of engineering</p>
-        <img class="pic" src="kitty.jpg">;
+        <img class="pic" src="pics/kitty.jpg">
         <div class = "links" class="bullets col-sm-6">
             <a href="#about">&#9733;about me&#9733;</a>
             <a href="#skills">&#9825;my skills&#9825;</a>
@@ -31,6 +38,9 @@
     </div>
     <div class="page">
     <section class = "s1">
+        <div>
+            <div class="scroll-indicator" id="about" data-scroll-indicator-title="about me"></div>
+        </div>
         <section class="s2">
             <a id="about">
             <h1 data-splitting="">hi, im trianna, a sophomore at umich :)</h1>
@@ -46,6 +56,9 @@
                 officia deserunt mollit anim id est laborum."
             </p>
         </section>
+        <div>
+            <div class="scroll-indicator" id="skills" data-scroll-indicator-title="my skills"></div>
+        </div>
         <section class="s2">
             <a id="skills">
                 <h1 data-splitting>i'm proficient in multiple languages</h2>
@@ -61,6 +74,9 @@
                 officia deserunt mollit anim id est laborum."
             </p>
         </section>
+        <div>
+            <div class="scroll-indicator" id="port" data-scroll-indicator-title="my portfolio"></div>
+        </div>
         <section class="s2">
             <a id="port">
                 <h1 data-splitting>here are the projects i have taken on!</h3>
