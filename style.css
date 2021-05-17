@@ -1,0 +1,44 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: rgb(250, 242, 242);
+    font-family: 'Manjari', sans-serif;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color:rgb(102, 111, 124);
+}
+header {
+    padding: 150px 0px 50px;
+    font-size: 8vh;
+}
+a {
+    padding: 0px 30px;
+    font-size: 2vh;
+}
+a:link {
+    color:rgb(133, 152, 179);
+}
+a:hover{
+    color:rgb(235, 207, 207);
+}
+a:visited{
+    color:rgb(155, 104, 104);
+}
+h1, h2, h3{
+    font-size: 5vh;
+}
+.s1 {
+    padding: 50px 0px 50px;
+    height: 100%;
+    background-attachment: fixed;
+    background-image: url("sky.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.s2{
+    padding: 100px 0px 100px;
+    background-color:rgba(240, 248, 255, .7);
+    margin-bottom: 50px;
+}
