@@ -1,6 +1,12 @@
 html{
     scroll-behavior: smooth;
 }
+@media only screen 
+and (max-device-height: 1024px) and (max-device-width: 1024px){
+    .s1 {
+        background-attachment: scroll;
+    }
+}
 body {
     background-color: rgb(250, 242, 242);
     font-family: 'Manjari', sans-serif;
