@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet"> 
@@ -13,20 +14,26 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <header>
+    <script src="script.js" aync defer></script> 
+    <script type="text/javascript" src="https://unpkg.com/splitting/dist/splitting.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/scroll-out/dist/scroll-out.js"></script>
+    <div id="top"><header>
         trianna nguyen.
-    </header>
-    <img class="pic" src="kitty.jpg">;
-    <section class = "links">
-        <a href="#about">&#9733;about me&#9733;</a>
-        <a href="#skills">&#9825;my skills&#9825;</a>
-        <a href="#port">&#10048;my&nbsp;portfolio&#10048;</a><br><br>
-        <br>
-    </section>
+        </header>
+        <p>student at university of michigan college of engineering</p>
+        <img class="pic" src="kitty.jpg">;
+        <div class = "links" class="bullets col-sm-6">
+            <a href="#about">&#9733;about me&#9733;</a>
+            <a href="#skills">&#9825;my skills&#9825;</a>
+            <a href="#port">&#10048;my&nbsp;portfolio&#10048;</a><br><br>
+            <br>
+        </div>
+    </div>
+    <div class="page">
     <section class = "s1">
         <section class="s2">
             <a id="about">
-            <h1>about me :)</h1>
+            <h1 data-splitting="">hi, im trianna, a sophomore at umich :)</h1>
             </a>
             <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -41,7 +48,7 @@
         </section>
         <section class="s2">
             <a id="skills">
-                <h2>my skills!</h2>
+                <h1 data-splitting>i'm proficient in multiple languages</h2>
             </a>
             <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -56,7 +63,7 @@
         </section>
         <section class="s2">
             <a id="port">
-                <h3>my portfolio&lt;3</h3>
+                <h1 data-splitting>here are the projects i have taken on!</h3>
             </a>
             <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -70,5 +77,6 @@
             </p>
         </section>
     </section>
+    </div>
   </body>
 </html>

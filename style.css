@@ -9,8 +9,15 @@ body {
     text-align: center;
     color:rgb(102, 111, 124);
 }
+.page {
+    margin: auto;
+    overflow: hidden;
+  }
+#top{
+    height: 100vh;
+}
 header {
-    padding: 150px 0px 15px;
+    padding: 180px 0px 0px 15px;
     font-size: 8vh;
 }
 .links{
@@ -30,8 +37,19 @@ a:hover{
 a:visited{
     color:rgb(155, 104, 104);
 }
-h1, h2, h3{
+h1{
     font-size: 5vh;
+}
+h1.splitting {
+    color: saturate(lighten(#182952,55%),60%);
+}
+.char {
+    transition: transform .3s cubic-bezier(.3, 0, .3, 1), opacity .3s linear;
+    transition-delay: calc( 20ms * var(--char-index) );
+}
+[data-scroll="out"] .char {
+    opacity: 0.1;
+    transform: translateY( .25em );
 }
 p {
     font-size: 2vh;
@@ -48,6 +66,7 @@ p {
     padding: 100px 0px 100px;
     background-color:rgba(240, 248, 255, .7);
     margin-bottom: 50px;
+    height: 100vh;
 }
 .pic{
     width: 25vh;
