@@ -73,7 +73,7 @@
   }
 }
 .scroll-indicator-controller > div.active {
-  background: rgb(236, 207, 207);
+  background: rgb(218, 189, 189);
   border-color: rgba(218, 184, 184, .5);
 }
 @supports (-ms-ime-align:auto) {

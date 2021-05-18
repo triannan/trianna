@@ -5,6 +5,22 @@ html{
 and (max-device-height: 1024px) and (max-device-width: 1024px){
     .s1 {
         background-attachment: scroll;
+        background-size: auto 100%;
+    }
+    #head {
+        padding-top: 0;
+    }
+    .links {
+        display:flex;
+        flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .links a{
+        margin-top:0;
+        margin-bottom:0;
+        padding-top:0;
+        padding-bottom: 0;
     }
 }
 body {
@@ -21,9 +37,10 @@ body {
   }
 #top{
     height: 100vh;
+    padding-top: 15vh;
 }
 header {
-    padding: 180px 0px 0px 15px;
+    padding: 15px 0px 0px 15px;
     font-size: 8vh;
 }
 .links{
@@ -73,7 +90,7 @@ p {
     background-size: cover;
 }
 .s2{
-    padding: 100px 0px 100px;
+    padding: 130px 0px 130px;
     background-color:rgba(240, 248, 255, .7);
     margin-bottom: 50px;
     height: 100vh;
