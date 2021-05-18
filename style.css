@@ -23,6 +23,11 @@ and (max-device-height: 1024px) and (max-device-width: 1024px){
         padding-bottom: 0;
     }
 }
+@media (max-width: 767px) {
+    .socials {
+      display: none !important;
+    }
+  }
 body {
     background-color: rgb(250, 242, 242);
     font-family: 'Manjari', sans-serif;
@@ -91,7 +96,7 @@ p {
 }
 .s2{
     padding: 130px 0px 130px;
-    background-color:rgba(240, 248, 255, .7);
+    background-color:rgba(240, 248, 255, .85);
     margin-bottom: 50px;
     height: 100vh;
 }
