@@ -7,4 +7,4 @@ easyScrollDots({
     'fixedNavId': '',
     'fixedNavUpward': false,
     'offset': 0
-  });
+});

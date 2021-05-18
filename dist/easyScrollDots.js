@@ -1,31 +1,29 @@
-/* Easy Scroll Dots 1.1.5 --- https://github.com/Superhands89/EasyScrollDots
+/* Easy Scroll Dots - codepenVersion --- https://github.com/Superhands89/EasyScrollDots
 * Quickly add anchor points throughout your web page/application and have navigational dots automatically appear
 * in a fixed position on the side of the page. This allows the user to click to scroll though sections of the page,
 * and it updates as they scroll.
 *
-* By Superhands89 2019-2021 --- https://github.com/Superhands89/
+* By Paul Dolby (Superhands89) 2019 --- https://github.com/Superhands89/
 *
-* GPLv3 Licence for open source use only
-* or purchase a Single Commercial License at https://gum.co/TdtEX
-* or purchase an Extended Commercial License at https://gum.co/NGfmlw
+* MIT Licence - Free and unrestricted use.
 */
 
 // a throttle function
 function dotsThrottle(func, wait, options) {
-    let context, args, result;
-    let timeout = null;
-    let previous = 0;
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
     if (!options) options = {};
-    const later = function () {
+    var later = function () {
         previous = options.leading === false ? 0 : Date.now();
         timeout = null;
         result = func.apply(context, args);
         if (!timeout) context = args = null;
     };
     return function () {
-        const now = Date.now();
+        var now = Date.now();
         if (!previous && options.leading === false) previous = now;
-        const remaining = wait - (now - previous);
+        var remaining = wait - (now - previous);
         context = this;
         args = arguments;
         if (remaining <= 0 || remaining > wait) {
@@ -41,13 +39,12 @@ function dotsThrottle(func, wait, options) {
         }
         return result;
     };
-};
+}
 
 // global fixed nav options
 let dotFixedNavPresent = false;
 let dotFixedNavId = '';
 let dotFixedNavUp = false;
-let dotOffset = 0;
 
 // scroll indicator controller
 function easyScrollDots(dotfixedOptions) {
@@ -55,7 +52,6 @@ function easyScrollDots(dotfixedOptions) {
     dotfixedOptions.fixedNav === true ? dotFixedNavPresent = true : dotFixedNavPresent;
     dotfixedOptions.fixedNavId === '' ? dotFixedNavId = false : dotFixedNavId = dotfixedOptions.fixedNavId;
     dotfixedOptions.fixedNavUpward === true ? dotFixedNavUp = true : dotFixedNavUp;
-    dotfixedOptions.offset > 0 ? dotOffset = dotfixedOptions.offset : dotOffset;
 
     if (scrollIndi.length) {
         const scrollIndiTemplate = '<div class="scroll-indicator-controller"><span></span></div>';
@@ -77,7 +73,7 @@ function easyScrollDots(dotfixedOptions) {
 
         const scrollIndiControllerDots = scrollIndiController.querySelectorAll('[data-indi-controller-id]');
 
-        const handleIndiScroll = dotsThrottle(function () {
+        var handleIndiScroll = dotsThrottle(function () {
             let indiScrollTopCollection = {};
 
             scrollIndiElems.forEach(function (e) {
@@ -87,7 +83,7 @@ function easyScrollDots(dotfixedOptions) {
                 indiScrollTopCollection[scrollIndiIdScroll] = indiScrollTop;
             });
 
-            // const indiOffsetValues = Object.values(indiScrollTopCollection); not supported in IE
+            // const indiOffsetValues = Object.values(indiScrollTopCollection); not supported in ie
             const indiOffsetValues = Object.keys(indiScrollTopCollection).map(function (itm) { return indiScrollTopCollection[itm]; });
             const indiOffsetMin = function () {
                 const indiRemoveMinuses = indiOffsetValues.filter(function (x) { return x > -150; });
@@ -108,30 +104,32 @@ function easyScrollDots(dotfixedOptions) {
 
         }, 300);
 
-      window.addEventListener('scroll', handleIndiScroll);
+      window.onscroll = function() {
+          handleIndiScroll();
+      };
     }
-};
+}
     
 function scrollIndiClicked(indiId) {
     if (window.jQuery) {
         // if jquery is availble then we can use jquery animations
-        const dotDocumentHtml = $('html, body');
         if (dotFixedNavPresent === true && dotFixedNavId.length) {
             // there is a fixed nav and its id has been defined
             const dotNavHeightElem = document.getElementById(dotFixedNavId);
             const dotNavHeight = dotNavHeightElem.clientHeight;
+            const dotDocumentHtml = $('html, body');
             const indiElement = $('#' + indiId);
     
             if (dotFixedNavUp === true) {
                 // fix nav on upward scroll only
                 dotDocumentHtml.animate({
-                    scrollTop: indiElement.offset().top - dotOffset
+                    scrollTop: indiElement.offset().top
                 }, 700);
                 const scrollPos = document.body.getBoundingClientRect().top;
                 setTimeout(function () {
                     if (document.body.getBoundingClientRect().top > scrollPos) {
                         dotDocumentHtml.animate({
-                            scrollTop: indiElement.offset().top - dotNavHeight - dotOffset
+                            scrollTop: indiElement.offset().top - dotNavHeight
                         }, 400);
                     }
                 }, 400);
@@ -139,14 +137,14 @@ function scrollIndiClicked(indiId) {
             else {
                 // fixed nav scroll
                 dotDocumentHtml.animate({
-                    scrollTop: indiElement.offset().top - dotNavHeight - dotOffset
+                    scrollTop: indiElement.offset().top - dotNavHeight
                 }, 700);
             }
         }
         else {
             // normal scroll
-            dotDocumentHtml.animate({
-                scrollTop: $('#' + indiId).offset().top - dotOffset
+            $('html, body').animate({
+                scrollTop: $('#' + indiId).offset().top
             }, 700);
         }    
     }
@@ -161,7 +159,7 @@ function scrollIndiClicked(indiId) {
             if (dotFixedNavUp === true) {
                 // fix nav on upward scroll only
                 window.scrollTo({
-                    top: indiElement.offsetTop - dotOffset,
+                    top: indiElement.offsetTop,
                     left: 0,
                     behavior: 'smooth'
                 });
@@ -169,7 +167,7 @@ function scrollIndiClicked(indiId) {
                 setTimeout(function () {
                     if (document.body.getBoundingClientRect().top > scrollPos) {
                         window.scrollTo({
-                            top: indiElement.offsetTop - dotNavHeight - dotOffset,
+                            top: indiElement.offsetTop - dotNavHeight,
                             left: 0,
                             behavior: 'smooth'
                         });
@@ -179,7 +177,7 @@ function scrollIndiClicked(indiId) {
             else {
                 // fixed nav scroll
                 window.scrollTo({
-                    top: indiElement.offsetTop - dotNavHeight - dotOffset,
+                    top: indiElement.offsetTop - dotNavHeight,
                     left: 0,
                     behavior: 'smooth'
                 });
@@ -188,10 +186,10 @@ function scrollIndiClicked(indiId) {
         else {
             // normal scroll
             window.scrollTo({
-                top: document.getElementById(indiId).offsetTop - dotOffset,
+                top: document.getElementById(indiId).offsetTop,
                 left: 0,
                 behavior: 'smooth'
             });
         }
     }
-};
+}
