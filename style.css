@@ -50,7 +50,7 @@ header {
 }
 .links{
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 a {
     padding: 30px;
@@ -81,10 +81,18 @@ h1.splitting {
     opacity: 0.1;
     transform: translateY( .25em );
 }
-p {
+p{
     font-size: 2vh;
     margin-right: 5vh;
     margin-left: 5vh;
+}
+ul{
+    font-size: 2vh;
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
+li{
+    padding-bottom: 2vh;
 }
 .s1 {
     padding: 50px 0px 50px;
@@ -103,4 +111,20 @@ p {
 .pic{
     width: 25vh;
     height: 25vh;
+}
+.box1{
+    float:left;
+    height: 80vh;
+    width: 40vw;
+    background-color: rgba(243, 220, 223, 0.8);
+    border-radius: 25px;
+    margin-left: 10vh;
+}
+.box2{
+    float:right;
+    height: 80vh;
+    width: 40vw;
+    background-color: rgba(243, 220, 223, 0.8);
+    border-radius: 25px;
+    margin-right: 10vh;
 }
