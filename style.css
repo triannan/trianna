@@ -3,6 +3,15 @@ html{
 }
 @media only screen 
 and (max-device-height: 1024px) and (max-device-width: 1024px){
+    body {
+        color:rgb(102, 111, 124);
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .prof-img {
+        float: none;
+        height: 15vh;
+    }
     .s1 {
         background-attachment: scroll;
         background-size: auto 100%;
@@ -27,25 +36,45 @@ and (max-device-height: 1024px) and (max-device-width: 1024px){
     .socials {
       display: none !important;
     }
+    .prof-img {
+        float: none !important;
+    }
   }
 body {
     background-color: rgb(250, 242, 242);
     font-family: 'Manjari', sans-serif;
-    align-items: center;
-    align-content: center;
-    text-align: center;
+    text-align: left;
     color:rgb(102, 111, 124);
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+.prof-img {
+    float: right;
+    width: 20vw;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border-radius: 50%;
 }
 .page {
     margin: auto;
     overflow: hidden;
   }
-#top{
+.secs {
     height: 100vh;
-    padding-top: 15vh;
+    overflow: hidden;
+    padding-top: 15%;
 }
+
+.highlight {
+    font-weight: bold;
+    color:rgb(139, 60, 60);
+}
+#top {
+    height: 100vh;
+    padding-top: 30vh;
+}
+
 header {
-    padding: 15px 0px 0px 15px;
     font-size: 8vh;
 }
 .links{
@@ -53,7 +82,7 @@ header {
     margin-bottom: 30px;
 }
 a {
-    padding: 30px;
+    padding: 2%;
     font-size: 2vh;
 }
 a:link {
@@ -81,50 +110,18 @@ h1.splitting {
     opacity: 0.1;
     transform: translateY( .25em );
 }
-p{
+p {
+    font-size: 2vh;
+}
+ul {
     font-size: 2vh;
     margin-right: 5vh;
     margin-left: 5vh;
 }
-ul{
-    font-size: 2vh;
-    margin-right: 5vh;
-    margin-left: 5vh;
-}
-li{
+li {
     padding-bottom: 2vh;
 }
-.s1 {
-    padding: 50px 0px 50px;
-    height: 100%;
-    background-attachment: fixed;
-    background-image: url("pics/sky.png");
-    background-repeat:no-repeat;
-    background-size: cover;
-}
-.s2{
-    padding: 130px 0px 130px;
-    background-color:rgba(240, 248, 255, .85);
-    margin-bottom: 50px;
-    height: 100vh;
-}
-.pic{
-    width: 25vh;
-    height: 25vh;
-}
-.box1{
-    float:left;
-    height: 80vh;
-    width: 35vw;
-    background-color: rgba(243, 220, 223, 0.8);
-    border-radius: 25px;
-    margin-left: 10vh;
-}
-.box2{
-    float:right;
-    height: 80vh;
-    width: 35vw;
-    background-color: rgba(243, 220, 223, 0.8);
-    border-radius: 25px;
-    margin-right: 10vh;
+.pic {
+    width: 3vh;
+    height: 3vh;
 }
